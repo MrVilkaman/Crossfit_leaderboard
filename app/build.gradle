@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply from: "$project.rootDir/tools/tools.gradle"
+apply plugin: 'com.github.ben-manes.versions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 26
@@ -18,16 +22,52 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
+configurations.all {
+    resolutionStrategy {
+        // Force our version of support-annotations, we have a conflict between app and androidTest dependency resolution.
+        force libraries.supportAnnotations
+        force libraries.supportAppCompat
+        force libraries.mockitoCore
+        force "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        cacheChangingModulesFor 0, 'seconds'
+    }
+}
+
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
-    testCompile 'junit:junit:4.12'
+    kapt libraries.daggerCompiler
+
+    debugCompile libraries.leakcanary
+    releaseCompile libraries.leakcanary
+    testCompile libraries.leakcanary
+
+    compile libraries.supportDesign
+
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    compile libraries.cleanbase
+
+    testCompile "com.nhaarman:mockito-kotlin-kt1.1:1.5.0"
+    testCompile libraries.cleanbaseTest
+    testCompile 'org.json:json:20140107'
+    testCompile libraries.mockitoCore
+    testCompile libraries.mockitoInline
 }
 repositories {
     mavenCentral()
