@@ -52,6 +52,9 @@ configurations.all {
 
 dependencies {
     kapt libraries.daggerCompiler
+    compile libraries.daggerAndroid
+    kapt libraries.daggerAndroidPprocessor
+    compile libraries.daggerAndroidSupport
 
     debugCompile libraries.leakcanary
     releaseCompile libraries.leakcanary
@@ -59,12 +62,15 @@ dependencies {
 
     compile libraries.supportDesign
 
+    compile 'ru.terrakok.cicerone:cicerone:2.1.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-    compile libraries.cleanbase
+    compile project(path: ':cleanLib')
+//    compile libraries.cleanbase
 
     testCompile "com.nhaarman:mockito-kotlin-kt1.1:1.5.0"
-    testCompile libraries.cleanbaseTest
+//    testCompile project(':testutils')
+//    testCompile libraries.cleanbaseTest
     testCompile 'org.json:json:20140107'
     testCompile libraries.mockitoCore
     testCompile libraries.mockitoInline
