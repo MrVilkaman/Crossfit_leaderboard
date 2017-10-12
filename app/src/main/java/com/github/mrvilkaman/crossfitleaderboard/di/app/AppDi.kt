@@ -2,11 +2,11 @@ package com.github.mrvilkaman.crossfitleaderboard.di.app
 
 
 import android.support.v7.app.AppCompatActivity
+import com.github.mrvilkaman.crossfitleaderboard.di.regmodule.RegistrationFragModule
 import com.github.mrvilkaman.crossfitleaderboard.di.regmodule.RegistrationModule
 import com.github.mrvilkaman.crossfitleaderboard.ui.app.App
 import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.RegistrationActivity
 import com.github.mrvilkaman.di.PerActivity
-import com.github.mrvilkaman.di.injector.EmptyFragmentInjectorModule
 import com.github.mrvilkaman.di.modules.CoreProvidersModule
 import com.github.mrvilkaman.di.modules.DevModule
 import com.github.mrvilkaman.di.modules.EventBusModule
@@ -42,25 +42,6 @@ interface AppComponent {
     fun inject(app: App)
 }
 
-@Module(includes = arrayOf(AndroidSupportInjectionModule::class))
-interface  AppModule {
-
-    @Binds
-    @PerActivity
-    fun provideFeatureView(featureActivity: RegistrationActivity): AppCompatActivity
-
-    @PerActivity
-    @ContributesAndroidInjector(modules = arrayOf(
-            CommonActivityModule::class,
-            ThrowableModule::class,
-            RegistrationModule::class,
-            ToolbarEmptyModule::class,
-            DrawerEmptyModule::class,
-            EmptyFragmentInjectorModule::class
-    ))
-    fun registrationInjector(): RegistrationActivity
-}
-
 @Module
 class NavigationModule {
     private val cicerone: Cicerone<Router> = Cicerone.create()
@@ -73,3 +54,23 @@ class NavigationModule {
     @Singleton
     fun provideNavigatorHolder(): NavigatorHolder = cicerone.navigatorHolder
 }
+
+@Module(includes = arrayOf(AndroidSupportInjectionModule::class))
+interface AppModule {
+
+    @Binds
+    @PerActivity
+    fun provideFeatureView(featureActivity: RegistrationActivity): AppCompatActivity
+
+    @PerActivity
+    @ContributesAndroidInjector(modules = arrayOf(
+            CommonActivityModule::class,
+            ThrowableModule::class,
+            RegistrationModule::class,
+            ToolbarEmptyModule::class,
+            DrawerEmptyModule::class,
+            RegistrationFragModule::class
+    ))
+    fun registrationInjector(): RegistrationActivity
+}
+
