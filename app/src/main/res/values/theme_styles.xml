@@ -11,6 +11,7 @@
 		<item name="colorPrimary">@color/colorPrimary</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 		<item name="colorAccent">@color/colorAccent</item>
+		<item name="colorAccent2">@color/colorAccent2</item>
 
 		<item name="colorControlNormal">@color/color_control_normal</item>
 		<item name="colorControlActivated">@color/colorAccent2</item>
@@ -21,11 +22,12 @@
 
 	<declare-styleable name="Theme.Material.Sbrf">
 		<attr name="textInputLayoutStyle" format="reference"/>
+		<attr name="colorAccent2" format="reference"/>
 	</declare-styleable>
 
 	<!--BASE-->
 
-	<style parent="@style/Widget.AppCompat.Spinner.Underlined" name="Widget.CF.SpinnerwithNoArrow">
+	<style name="Widget.CF.SpinnerwithNoArrow" parent="@style/Widget.AppCompat.Spinner.Underlined">
 		<!--<item name="android:background">@drawable/edit_text</item>-->
 	</style>
 
@@ -46,17 +48,31 @@
 		<item name="errorTextAppearance">@style/TextAppearance.CF.Error</item>
 	</style>
 
+
+	<style name="TextAppearance.CF.Button.MainAction" parent="@style/TextAppearance.AppCompat.Widget.Button.Colored"/>
+
 	<style name="TextAppearance.CF.Hint" parent="@style/TextAppearance.AppCompat.Caption">
 		<!--<item name="android:textColor">?attr/colorAccent</item>-->
 		<item name="android:textColor">@color/text_color_hint</item>
 	</style>
+
 	<style name="TextAppearance.CF.Error" parent="@style/TextAppearance.AppCompat.Caption">
 		<item name="android:textColor">#FFDD2C00</item>
 	</style>
+
 	<style name="TextAppearance.CF.Counter" parent="@style/TextAppearance.AppCompat.Caption">
 		<item name="android:textColor">?attr/colorAccent</item>
 	</style>
+
 	<style name="TextAppearance.CF.Counter.Overflow" parent="@style/TextAppearance.AppCompat.Caption">
 		<item name="android:textColor">#FFDD2C00</item>
 	</style>
+
+
+	<!--Кнопки-->
+	<style name="Widget.CF.Button.MainAction" parent="Widget.AppCompat.Button.Colored">
+		<item name="colorButtonNormal">?attr/colorAccent2</item>
+		<item name="android:textColor">@null</item>
+	</style>
+
 </resources>

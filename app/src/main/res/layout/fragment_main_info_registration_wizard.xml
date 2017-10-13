@@ -50,9 +50,8 @@
 		android:id="@+id/planets_spinner"
 		style="@style/Widget.CF.EditText"
 		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
+		android:layout_height="48dp"
 		android:spinnerMode="dropdown"/>
-
 
 	<android.support.v7.widget.SwitchCompat
 		android:layout_width="wrap_content"
@@ -63,4 +62,8 @@
 		android:text="@string/registration_wizard_command_event_hint"
 		android:textAppearance="?android:textAppearance"
 		app:switchPadding="10dp"/>
+
+	<android.support.v7.widget.AppCompatButton
+		style="@style/Button_MainAction"
+		android:text="@string/registration_wizard_btn_next"/>
 </LinearLayout>

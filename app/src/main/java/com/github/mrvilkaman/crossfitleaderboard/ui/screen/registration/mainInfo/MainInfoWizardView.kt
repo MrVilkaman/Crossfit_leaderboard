@@ -2,5 +2,8 @@ package com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.mainInf
 
 
 import com.github.mrvilkaman.presentationlayer.fragments.core.BaseView
+import java.util.*
 
-interface MainInfoWizardView : BaseView
+interface MainInfoWizardView : BaseView {
+    fun bindDate(date: Date)
+}
