@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+	android:id="@id/parent"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:layout_margin="16dp"
+	android:focusable="true" android:focusableInTouchMode="true"
+	android:descendantFocusability="beforeDescendants"
 	android:orientation="vertical">
 
-	<requestFocus/>
 
 	<android.support.design.widget.TextInputLayout
 		style="@style/RegistrationTextStyle">
 
 		<android.support.v7.widget.AppCompatEditText
+			android:id="@+id/registration_wizard_event_title"
 			style="@style/RegistrationEditText"
 			android:hint="@string/registration_wizard_event_title_hint"
-			tools:text="adasdasdads">
-
-			<requestFocus/>
-
-		</android.support.v7.widget.AppCompatEditText>
+			tools:text="adasdasdads"/>
 	</android.support.design.widget.TextInputLayout>
 
 
@@ -28,7 +27,7 @@
 		style="@style/RegistrationTextStyle">
 
 		<android.support.v7.widget.AppCompatEditText
-			android:id="@+id/registration_date"
+			android:id="@+id/registration_wizard_event_date"
 			style="@style/RegistrationEditText"
 			android:focusable="false"
 			android:focusableInTouchMode="false"
@@ -47,7 +46,7 @@
 		android:textColor="@null"/>
 
 	<android.support.v7.widget.AppCompatSpinner
-		android:id="@+id/planets_spinner"
+		android:id="@+id/registration_wizard_event_wod_count"
 		style="@style/Widget.CF.EditText"
 		android:layout_width="fill_parent"
 		android:layout_height="48dp"
@@ -64,6 +63,8 @@
 		app:switchPadding="10dp"/>
 
 	<android.support.v7.widget.AppCompatButton
+		android:id="@+id/registration_wizard_next"
 		style="@style/Button_MainAction"
+		android:layout_marginTop="48dp"
 		android:text="@string/registration_wizard_btn_next"/>
 </LinearLayout>

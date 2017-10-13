@@ -13,4 +13,11 @@
 		<item>3</item>
 		<item>4</item>
 	</string-array>
+
+
+	<string name="registration_wizard_error_title_empty">Название события не может быть пустым!</string>
+	<string name="registration_wizard_error_date_empty">Дата события не может быть пустой!</string>
+	<string name="registration_wizard_error">Ошибка!</string>
+
+
 </resources>
