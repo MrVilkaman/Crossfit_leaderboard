@@ -28,6 +28,7 @@
 		style="@style/RegistrationTextStyle">
 
 		<android.support.v7.widget.AppCompatEditText
+			android:id="@+id/registration_date"
 			style="@style/RegistrationEditText"
 			android:focusable="false"
 			android:focusableInTouchMode="false"
