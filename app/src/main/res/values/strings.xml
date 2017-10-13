@@ -1,3 +1,15 @@
 <resources>
 	<string name="app_name">Crossfit leaderboard</string>
+
+	<string name="registration_wizard_event_title_hint">Название мероприятия</string>
+	<string name="registration_wizard_event_date_hint">Дата</string>
+	<string name="registration_wizard_event_wod_count_hint">Количество WOD</string>
+	<string name="registration_wizard_command_event_hint">Команда</string>
+
+	<string-array name="wod_count_list">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+	</string-array>
 </resources>

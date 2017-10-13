@@ -1,14 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:layout_margin="16dp"
 	android:orientation="vertical">
 
-	<TextView
-		android:gravity="center"
-		android:text="Hello"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"/>
+	<requestFocus/>
 
+	<android.support.design.widget.TextInputLayout
+		style="@style/RegistrationTextStyle">
+
+		<android.support.v7.widget.AppCompatEditText
+			style="@style/RegistrationEditText"
+			android:hint="@string/registration_wizard_event_title_hint"
+			tools:text="adasdasdads">
+
+			<requestFocus/>
+
+		</android.support.v7.widget.AppCompatEditText>
+	</android.support.design.widget.TextInputLayout>
+
+
+	<android.support.design.widget.TextInputLayout
+		style="@style/RegistrationTextStyle">
+
+		<android.support.v7.widget.AppCompatEditText
+			style="@style/RegistrationEditText"
+			android:focusable="false"
+			android:focusableInTouchMode="false"
+			android:hint="@string/registration_wizard_event_date_hint"
+			tools:text="adasdasdads">
+
+		</android.support.v7.widget.AppCompatEditText>
+	</android.support.design.widget.TextInputLayout>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingLeft="4dp"
+		android:text="@string/registration_wizard_event_wod_count_hint"
+		android:textAppearance="@style/TextAppearance.CF.Hint"
+		android:textColor="@null"/>
+
+	<android.support.v7.widget.AppCompatSpinner
+		android:id="@+id/planets_spinner"
+		style="@style/Widget.CF.EditText"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:spinnerMode="dropdown"/>
+
+
+	<android.support.v7.widget.SwitchCompat
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:enabled="false"
+		android:paddingLeft="4dp"
+		android:switchPadding="5dp"
+		android:text="@string/registration_wizard_command_event_hint"
+		android:textAppearance="?android:textAppearance"
+		app:switchPadding="10dp"/>
 </LinearLayout>

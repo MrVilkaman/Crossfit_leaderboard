@@ -11,5 +11,5 @@ class RegistrationActivity : BaseActivity<BasePresenter<*>>() {
     override fun afterOnCreate() {
     }
 
-    override fun getActivityLayoutResourceID(): Int = R.layout.cleanbase_activity_content_only
+    override fun getActivityLayoutResourceID(): Int = R.layout.cleanbase_activity_content_with_toolbar
 }

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<!-- Base application theme. -->
+	<style name="AppTheme.Main">
+		<item name="android:textColorPrimary">@color/text_color_primary</item>
+		<item name="android:textColorSecondary">@color/text_color_secondary</item>
+		<item name="android:textColorTertiary">@color/text_color_tertiary</item>
+		<item name="android:textColorHint">@color/text_color_hint</item>
+		<item name="android:textColor">@color/text_color_primary</item>
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+		<item name="colorAccent">@color/colorAccent</item>
+
+		<item name="colorControlNormal">@color/color_control_normal</item>
+		<item name="colorControlActivated">@color/colorAccent2</item>
+		<item name="editTextStyle">@style/Widget.CF.EditText</item>
+		<item name="textInputLayoutStyle">@style/Widget.CF.TextInputLayout</item>
+
+	</style>
+
+	<declare-styleable name="Theme.Material.Sbrf">
+		<attr name="textInputLayoutStyle" format="reference"/>
+	</declare-styleable>
+
+	<!--BASE-->
+
+	<style parent="@style/Widget.AppCompat.Spinner.Underlined" name="Widget.CF.SpinnerwithNoArrow">
+		<!--<item name="android:background">@drawable/edit_text</item>-->
+	</style>
+
+	<style name="TextAppearance.CF.EditText" parent="@style/TextAppearance.CF.Input1">
+	</style>
+
+	<style name="Widget.CF.EditText" parent="@style/Widget.AppCompat.EditText">
+		<item name="android:textAppearance">@style/TextAppearance.CF.EditText</item>
+	</style>
+
+	<style name="TextAppearance.CF.Input1" parent="@style/TextAppearance.AppCompat.Display1">
+		<item name="android:textSize">20sp</item>
+	</style>
+
+
+	<style name="Widget.CF.TextInputLayout" parent="@style/Widget.Design.TextInputLayout">
+		<!--<item name="hintTextAppearance">@style/TextAppearance.CF.Hint</item>-->
+		<item name="errorTextAppearance">@style/TextAppearance.CF.Error</item>
+	</style>
+
+	<style name="TextAppearance.CF.Hint" parent="@style/TextAppearance.AppCompat.Caption">
+		<!--<item name="android:textColor">?attr/colorAccent</item>-->
+		<item name="android:textColor">@color/text_color_hint</item>
+	</style>
+	<style name="TextAppearance.CF.Error" parent="@style/TextAppearance.AppCompat.Caption">
+		<item name="android:textColor">#FFDD2C00</item>
+	</style>
+	<style name="TextAppearance.CF.Counter" parent="@style/TextAppearance.AppCompat.Caption">
+		<item name="android:textColor">?attr/colorAccent</item>
+	</style>
+	<style name="TextAppearance.CF.Counter.Overflow" parent="@style/TextAppearance.AppCompat.Caption">
+		<item name="android:textColor">#FFDD2C00</item>
+	</style>
+</resources>

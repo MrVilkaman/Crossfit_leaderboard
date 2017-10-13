@@ -13,7 +13,7 @@ import com.github.mrvilkaman.di.modules.EventBusModule
 import com.github.mrvilkaman.di.modules.activity.CommonActivityModule
 import com.github.mrvilkaman.di.modules.activity.DrawerEmptyModule
 import com.github.mrvilkaman.di.modules.activity.ThrowableModule
-import com.github.mrvilkaman.di.modules.activity.ToolbarEmptyModule
+import com.github.mrvilkaman.di.modules.activity.ToolbarModule
 import dagger.Binds
 import dagger.Component
 import dagger.Module
@@ -67,7 +67,7 @@ interface AppModule {
             CommonActivityModule::class,
             ThrowableModule::class,
             RegistrationModule::class,
-            ToolbarEmptyModule::class,
+            ToolbarModule::class,
             DrawerEmptyModule::class,
             RegistrationFragModule::class
     ))
