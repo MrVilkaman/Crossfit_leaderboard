@@ -5,18 +5,10 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-				  android:layout_width="match_parent"
-				  android:layout_height="wrap_content"
-				  android:orientation="vertical">
-
-		<com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.wodinfo.WodInfoItemWidget
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"/>
-
-		<com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.wodinfo.WodInfoItemWidget
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"/>
-
+	<LinearLayout
+		android:id="@+id/wod_content"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
 	</LinearLayout>
 </ScrollView>

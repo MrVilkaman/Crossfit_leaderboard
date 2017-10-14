@@ -2,16 +2,20 @@ package com.github.mrvilkaman.crossfitleaderboard.business.registration
 
 import com.github.mrvilkaman.crossfitleaderboard.R
 import io.reactivex.Completable
+import io.reactivex.Single
 import javax.inject.Inject
 
 
 interface RegistrationWizardInteractor {
     fun validateMainEventInfo(uiModel: RegEventMainInfoUIModel): Completable
+    fun initWodCount(): Single<Int>
 }
 
 class RegistrationWizardInteractorImpl
 @Inject constructor()
     : RegistrationWizardInteractor {
+
+    override fun initWodCount(): Single<Int> = Single.just(3)
 
     override fun validateMainEventInfo(uiModel: RegEventMainInfoUIModel): Completable {
         if (uiModel.title.isNullOrEmpty()) {

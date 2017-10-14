@@ -17,16 +17,15 @@ import kotlinx.android.synthetic.main.item_wod_info_view.view.*
 
 class WodInfoItemWidget : BaseCustomView<BasePresenter<*>> {
 
-    @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) : super(context, attrs) {
-
+    constructor(context: Context, number: Int) : super(context, null) {
+        registration_wizard_wod_number.text = resources.getString(R.string.wod_wizard_title, number)
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {}
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
 
     override fun onViewCreate(inflate: View, context: Context, attrs: AttributeSet?) {
 //        registration_wizard_wod_title
 
-        registration_wizard_wod_number.text = resources.getString(R.string.wod_wizard_title,1)
 
         // Инициализация spinner для выбора типа
         val objects: Array<WodType> = WodType.values()
@@ -44,6 +43,7 @@ class WodInfoItemWidget : BaseCustomView<BasePresenter<*>> {
     }
 
     override fun getLayoutId(): Int = R.layout.item_wod_info_view
+
 }
 
 private class TestAdapter(context: Context, objects: Array<WodType>) :

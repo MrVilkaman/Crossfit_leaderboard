@@ -28,7 +28,9 @@ class RegistrationNavigator(
 
     override fun getDrawer(): Fragment? = null
 
-    override fun getMainScreenKey(): String? = MAIN_INFO_REGISTRATION_WIZARD
+    override fun getMainScreenKey(): String? =
+            WOD_INFO_REGISTRATION_WIZARD
+//            MAIN_INFO_REGISTRATION_WIZARD
 
     override fun createFragment(screenKey: String, data: Any?): Fragment? =
             when (screenKey) {
