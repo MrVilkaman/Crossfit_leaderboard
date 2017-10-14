@@ -7,7 +7,11 @@ import java.util.*
 import javax.inject.Inject
 
 
-class ValidateException(@StringRes val errorMessageTextId: Int) : Throwable() {
+data class ValidateException(@StringRes val errorMessageTextId: Int = 0,val number:Int = 0) : Throwable() {
+    override fun fillInStackTrace(): Throwable = this
+}
+
+data class ValidateCompositeException(val list:List<ValidateException>): Throwable() {
     override fun fillInStackTrace(): Throwable = this
 }
 

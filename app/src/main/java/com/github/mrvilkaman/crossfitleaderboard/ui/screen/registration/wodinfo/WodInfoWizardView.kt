@@ -5,4 +5,5 @@ import com.github.mrvilkaman.presentationlayer.fragments.core.BaseView
 
 interface WodInfoWizardView : BaseView {
     fun createWodViews(wodCount: Int)
+    fun showWodError(errorMessageTextId: Int, number: Int)
 }

@@ -18,6 +18,7 @@
 	<string name="registration_wizard_error_title_empty">Название события не может быть пустым!</string>
 	<string name="registration_wizard_error_date_empty">Дата события не может быть пустой!</string>
 	<string name="registration_wizard_error">Ошибка!</string>
+	<string name="registration_wizard_error_description_empty">Описание не может быть пустым!</string>
 
 
 	<string name="wod_wizard_title">WOD #%1$d</string>

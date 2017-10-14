@@ -57,6 +57,7 @@ class MainInfoWizardScreen : BaseFragment<MainInfoWizardPresenter>(), MainInfoWi
         }
 
         registration_wizard_next.setOnClickListener {
+            hideKeyboard()
             presenter.onClickNextStep(UIUtils.asString(registration_wizard_event_title))
         }
 

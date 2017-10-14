@@ -8,3 +8,8 @@ enum class WodType(@StringRes val titleStrId: Int) {
     AFAP(R.string.wod_wizard_type_afar),
     AMRAP(R.string.wod_wizard_type_amrap)
 }
+
+data class WodItem(
+        val description: String,
+        val type: WodType
+)
