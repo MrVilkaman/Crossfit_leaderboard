@@ -15,7 +15,9 @@ class RegistrationWizardInteractorImpl
 @Inject constructor()
     : RegistrationWizardInteractor {
 
-    override fun initWodCount(): Single<Int> = Single.just(3)
+    override fun initWodCount(): Single<Int> = Single.just(uiModel?.wodCount?:1)
+
+    private var uiModel: RegEventMainInfoUIModel? = null
 
     override fun validateMainEventInfo(uiModel: RegEventMainInfoUIModel): Completable {
         if (uiModel.title.isNullOrEmpty()) {
@@ -27,6 +29,7 @@ class RegistrationWizardInteractorImpl
         if (uiModel.wodCount == null) {
             return Completable.error(ValidateException(R.string.registration_wizard_error))
         }
+        this.uiModel = uiModel
         return Completable.complete()
 
     }

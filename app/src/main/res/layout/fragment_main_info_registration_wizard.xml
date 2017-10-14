@@ -58,7 +58,6 @@
 
 	<android.support.v7.widget.AppCompatButton
 		android:id="@+id/registration_wizard_next"
-		style="@style/Button_MainAction"
-		android:layout_marginTop="48dp"
+		style="@style/Button_MainAction.RegNext"
 		android:text="@string/registration_wizard_btn_next"/>
 </LinearLayout>

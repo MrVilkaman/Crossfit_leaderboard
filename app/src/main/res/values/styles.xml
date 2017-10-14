@@ -15,11 +15,16 @@
 
 
 	<style name="Button_MainAction">
+		<item name="android:textColor">@null</item>
 		<item name="android:layout_gravity">center</item>
 		<item name="android:layout_width">192dp</item>
 		<item name="android:layout_height">wrap_content</item>
-		<item name="android:textAppearance">@style/TextAppearance.CF.Button.MainAction</item>
-		<item name="android:theme">@style/Widget.CF.Button.MainAction</item>
+		<!--<item name="android:textAppearance">@style/TextAppearance.CF.Button.MainAction</item>-->
+	</style>
+
+	<style name="Button_MainAction.RegNext">
+		<item name="android:layout_marginTop">16dp</item>
+		<item name="android:layout_marginBottom">16dp</item>
 	</style>
 
 	<style name="SpinnerHint">

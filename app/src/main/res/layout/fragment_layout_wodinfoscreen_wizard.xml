@@ -6,9 +6,23 @@
 	android:layout_height="match_parent">
 
 	<LinearLayout
-		android:id="@+id/wod_content"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:orientation="vertical">
+
+		<LinearLayout
+			android:id="@+id/wod_content"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+		</LinearLayout>
+
+
+		<android.support.v7.widget.AppCompatButton
+			android:id="@+id/registration_wizard_next"
+			style="@style/Button_MainAction.RegNext"
+			android:text="@string/registration_wizard_btn_next"/>
 	</LinearLayout>
+
+
 </ScrollView>
