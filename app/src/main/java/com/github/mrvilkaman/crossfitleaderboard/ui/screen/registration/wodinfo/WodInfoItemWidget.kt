@@ -26,6 +26,7 @@ class WodInfoItemWidget : BaseCustomView<BasePresenter<*>> {
     override fun onViewCreate(inflate: View, context: Context, attrs: AttributeSet?) {
 //        registration_wizard_wod_title
 
+        registration_wizard_wod_number.text = resources.getString(R.string.wod_wizard_title,1)
 
         // Инициализация spinner для выбора типа
         val objects: Array<WodType> = WodType.values()

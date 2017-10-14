@@ -20,6 +20,7 @@
 	<string name="registration_wizard_error">Ошибка!</string>
 
 
+	<string name="wod_wizard_title">WOD #%1$d</string>
 	<string name="wod_wizard_description">Описание WOD</string>
 	<string name="wod_wizard_type">Тип WOD</string>
 
