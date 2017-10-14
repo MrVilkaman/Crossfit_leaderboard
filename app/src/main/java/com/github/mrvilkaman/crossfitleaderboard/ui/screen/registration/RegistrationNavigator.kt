@@ -3,9 +3,9 @@ package com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration
 import android.content.Intent
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.ScreensKey.MAIN_INFO_REGISTRATION_WIZARD
-import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.ScreensKey.WOD_INFO_REGISTRATION_WIZARD
+import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.ScreensKey.*
 import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.mainInfo.MainInfoWizardScreen
+import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.teaminfo.TeamInfoWizardScreenFragment
 import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.wodinfo.WodInfoWizardScreen
 import com.github.mrvilkaman.presentationlayer.resolution.BaseNavigator
 import com.github.mrvilkaman.presentationlayer.resolution.drawer.LeftDrawerHelper
@@ -36,6 +36,7 @@ class RegistrationNavigator(
             when (screenKey) {
                 MAIN_INFO_REGISTRATION_WIZARD -> MainInfoWizardScreen()
                 WOD_INFO_REGISTRATION_WIZARD -> WodInfoWizardScreen.open()
+                TEAM_INFO_REGISTRATION_WIZARD -> TeamInfoWizardScreenFragment.open()
                 else -> null
             }
 
