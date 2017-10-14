@@ -3,7 +3,7 @@ package com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.mainInf
 import com.github.mrvilkaman.crossfitleaderboard.business.registration.RegEventMainInfoUIModel
 import com.github.mrvilkaman.crossfitleaderboard.business.registration.RegistrationWizardInteractor
 import com.github.mrvilkaman.crossfitleaderboard.business.registration.ValidateException
-import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.ScreensKey
+import com.github.mrvilkaman.crossfitleaderboard.ui.screen.ScreensKey
 import com.github.mrvilkaman.presentationlayer.fragments.core.BasePresenter
 import com.github.mrvilkaman.presentationlayer.subscriber.ViewSubscriber
 import ru.terrakok.cicerone.Router

@@ -4,8 +4,10 @@ import android.support.v7.app.AppCompatActivity
 import com.github.mrvilkaman.core.R
 import com.github.mrvilkaman.crossfitleaderboard.business.registration.RegistrationWizardInteractor
 import com.github.mrvilkaman.crossfitleaderboard.business.registration.RegistrationWizardInteractorImpl
+import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.RegistrationActivity
 import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.RegistrationNavigator
 import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.mainInfo.MainInfoWizardScreen
+import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.teaminfo.TeamInfoWizardScreenFragment
 import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.wodinfo.WodInfoWizardScreen
 import com.github.mrvilkaman.di.INeedActivityViewNotify
 import com.github.mrvilkaman.di.PerActivity
@@ -39,10 +41,16 @@ class RegistrationModule {
     @PerActivity
     fun createLeftDrawerHelperINeedActivityViewNotify(helper: Navigator): INeedActivityViewNotify =
             helper as INeedActivityViewNotify
+
+
 }
 
 @Module
 interface RegistrationFragModule {
+    @Binds
+    @PerActivity
+    fun provideFeatureView(featureActivity: RegistrationActivity): AppCompatActivity
+
 
     @PerActivity
     @Binds
@@ -55,4 +63,8 @@ interface RegistrationFragModule {
     @PerScreen
     @ContributesAndroidInjector()
     fun getWodInfoWizardScreen(): WodInfoWizardScreen
+
+    @PerScreen
+    @ContributesAndroidInjector()
+    fun getTeamInfoWizardScreenFragment(): TeamInfoWizardScreenFragment
 }

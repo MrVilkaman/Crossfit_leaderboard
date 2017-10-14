@@ -1,10 +1,12 @@
 package com.github.mrvilkaman.crossfitleaderboard.di.app
 
 
-import android.support.v7.app.AppCompatActivity
+import com.github.mrvilkaman.crossfitleaderboard.di.mainmodule.MainFragModule
+import com.github.mrvilkaman.crossfitleaderboard.di.mainmodule.MainModule
 import com.github.mrvilkaman.crossfitleaderboard.di.regmodule.RegistrationFragModule
 import com.github.mrvilkaman.crossfitleaderboard.di.regmodule.RegistrationModule
 import com.github.mrvilkaman.crossfitleaderboard.ui.app.App
+import com.github.mrvilkaman.crossfitleaderboard.ui.screen.main.MainActivity
 import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.RegistrationActivity
 import com.github.mrvilkaman.di.PerActivity
 import com.github.mrvilkaman.di.modules.CoreProvidersModule
@@ -14,7 +16,6 @@ import com.github.mrvilkaman.di.modules.activity.CommonActivityModule
 import com.github.mrvilkaman.di.modules.activity.DrawerEmptyModule
 import com.github.mrvilkaman.di.modules.activity.ThrowableModule
 import com.github.mrvilkaman.di.modules.activity.ToolbarModule
-import dagger.Binds
 import dagger.Component
 import dagger.Module
 import dagger.Provides
@@ -58,10 +59,6 @@ class NavigationModule {
 @Module(includes = arrayOf(AndroidSupportInjectionModule::class))
 interface AppModule {
 
-    @Binds
-    @PerActivity
-    fun provideFeatureView(featureActivity: RegistrationActivity): AppCompatActivity
-
     @PerActivity
     @ContributesAndroidInjector(modules = arrayOf(
             CommonActivityModule::class,
@@ -72,5 +69,16 @@ interface AppModule {
             RegistrationFragModule::class
     ))
     fun registrationInjector(): RegistrationActivity
+
+    @PerActivity
+    @ContributesAndroidInjector(modules = arrayOf(
+            CommonActivityModule::class,
+            ThrowableModule::class,
+            MainModule::class,
+            MainFragModule::class,
+            ToolbarModule::class,
+            DrawerEmptyModule::class
+    ))
+    fun mainInjector(): MainActivity
 }
 

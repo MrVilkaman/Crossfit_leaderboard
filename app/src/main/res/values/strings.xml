@@ -6,6 +6,8 @@
 	<string name="registration_wizard_event_wod_count_hint">Количество WOD</string>
 	<string name="registration_wizard_command_event_hint">Команда</string>
 	<string name="registration_wizard_btn_next">Далее</string>
+	<string name="registration_wizard_btn_finish">Создать</string>
+
 
 	<string-array name="wod_count_list">
 		<item>1</item>

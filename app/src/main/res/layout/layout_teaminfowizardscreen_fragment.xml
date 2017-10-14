@@ -6,7 +6,8 @@
 	android:orientation="vertical">
 
 	<android.support.v7.widget.AppCompatButton
+		android:id="@+id/registration_wizard_btn_finish"
 		style="@style/Button_MainAction.RegNext"
-		android:text="@string/registration_wizard_btn_next"/>
+		android:text="@string/registration_wizard_btn_finish"/>
 
 </LinearLayout>
