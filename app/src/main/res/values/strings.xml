@@ -20,4 +20,11 @@
 	<string name="registration_wizard_error">Ошибка!</string>
 
 
+	<string name="wod_wizard_description">Описание WOD</string>
+	<string name="wod_wizard_type">Тип WOD</string>
+
+	<string name="wod_wizard_type_afar">AFAP</string>
+	<string name="wod_wizard_type_amrap">AMRAP</string>
+
+
 </resources>

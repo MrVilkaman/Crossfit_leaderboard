@@ -22,4 +22,18 @@
 		<item name="android:theme">@style/Widget.CF.Button.MainAction</item>
 	</style>
 
+	<style name="SpinnerHint">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:paddingLeft">4dp</item>
+		<item name="android:textAppearance">@style/TextAppearance.CF.Hint</item>
+		<item name="android:textColor">@null</item>
+	</style>
+
+	<style name="Spinner" parent="Widget.CF.EditText">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">48dp</item>
+		<item name="android:spinnerMode">dropdown</item>
+	</style>
+
 </resources>
