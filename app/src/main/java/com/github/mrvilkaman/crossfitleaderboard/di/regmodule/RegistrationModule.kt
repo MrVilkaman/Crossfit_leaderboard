@@ -44,7 +44,7 @@ class RegistrationModule {
 @Module
 interface RegistrationFragModule {
 
-    @PerScreen
+    @PerActivity
     @Binds
     fun getRegistrationWizardInteractor(inter:RegistrationWizardInteractorImpl): RegistrationWizardInteractor
 
