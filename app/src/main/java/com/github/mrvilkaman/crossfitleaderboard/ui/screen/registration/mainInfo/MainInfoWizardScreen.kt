@@ -25,7 +25,6 @@ class MainInfoWizardScreen : BaseFragment<MainInfoWizardPresenter>(), MainInfoWi
         uiModel.onSaveState(outState)
     }
 
-
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
         uiModel.onStateRestored(savedInstanceState)

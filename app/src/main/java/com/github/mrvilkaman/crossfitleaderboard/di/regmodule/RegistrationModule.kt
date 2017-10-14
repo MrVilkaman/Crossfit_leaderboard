@@ -6,6 +6,7 @@ import com.github.mrvilkaman.crossfitleaderboard.business.registration.Registrat
 import com.github.mrvilkaman.crossfitleaderboard.business.registration.RegistrationWizardInteractorImpl
 import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.RegistrationNavigator
 import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.mainInfo.MainInfoWizardScreen
+import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.wodinfo.WodInfoWizardScreen
 import com.github.mrvilkaman.di.INeedActivityViewNotify
 import com.github.mrvilkaman.di.PerActivity
 import com.github.mrvilkaman.di.PerScreen
@@ -50,4 +51,8 @@ interface RegistrationFragModule {
     @PerScreen
     @ContributesAndroidInjector()
     fun getMainInfoWizardScreen(): MainInfoWizardScreen
+
+    @PerScreen
+    @ContributesAndroidInjector()
+    fun getWodInfoWizardScreen(): WodInfoWizardScreen
 }
