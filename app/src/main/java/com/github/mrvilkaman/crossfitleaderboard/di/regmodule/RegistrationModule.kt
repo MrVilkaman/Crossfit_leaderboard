@@ -48,6 +48,6 @@ interface RegistrationFragModule {
     fun getRegistrationWizardInteractor(inter:RegistrationWizardInteractorImpl): RegistrationWizardInteractor
 
     @PerScreen
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector()
     fun getMainInfoWizardScreen(): MainInfoWizardScreen
 }

@@ -5,18 +5,31 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.github.mrvilkaman.crossfitleaderboard.R
+import com.github.mrvilkaman.crossfitleaderboard.business.registration.RegEventMainInfoUIModel
 import com.github.mrvilkaman.crossfitleaderboard.ui.dialogs.DatePickerDialog
 import com.github.mrvilkaman.presentationlayer.fragments.core.BaseFragment
 import com.github.mrvilkaman.presentationlayer.utils.ui.UIUtils
 import kotlinx.android.synthetic.main.fragment_main_info_registration_wizard.*
 import java.text.SimpleDateFormat
 import java.util.*
+import javax.inject.Inject
 
 
 class MainInfoWizardScreen : BaseFragment<MainInfoWizardPresenter>(), MainInfoWizardView {
 
     override fun getLayoutId(): Int = R.layout.fragment_main_info_registration_wizard
+    @Inject lateinit var uiModel: RegEventMainInfoUIModel
 
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        uiModel.onSaveState(outState)
+    }
+
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        uiModel.onStateRestored(savedInstanceState)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
