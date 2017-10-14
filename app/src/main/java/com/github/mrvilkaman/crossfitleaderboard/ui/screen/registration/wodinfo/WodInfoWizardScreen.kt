@@ -2,6 +2,7 @@ package com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.wodinfo
 
 
 import android.os.Bundle
+import android.support.transition.TransitionManager
 import android.view.View
 import com.github.mrvilkaman.crossfitleaderboard.R
 import com.github.mrvilkaman.crossfitleaderboard.business.registration.WodItem
@@ -29,6 +30,7 @@ class WodInfoWizardScreen : BaseFragment<WodInfoWizardPresenter>(), WodInfoWizar
     }
 
     override fun createWodViews(wodCount: Int) {
+        TransitionManager.beginDelayedTransition(parent)
         wod_content.removeAllViews()
         for (i in 0 until wodCount) {
             wod_content.addView(WodInfoItemWidget(context, i + 1))

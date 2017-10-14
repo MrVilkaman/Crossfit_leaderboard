@@ -43,7 +43,7 @@
 	</style>
 
 	<style name="TextAppearance.CF.Input1" parent="@style/TextAppearance.AppCompat.Display1">
-		<item name="android:textSize">20sp</item>
+		<item name="android:textSize">18sp</item>
 	</style>
 
 

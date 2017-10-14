@@ -53,7 +53,7 @@
 		android:paddingLeft="4dp"
 		android:switchPadding="5dp"
 		android:text="@string/registration_wizard_command_event_hint"
-		android:textAppearance="?android:textAppearance"
+		android:textAppearance="@style/TextAppearance.AppCompat.Body1"
 		app:switchPadding="10dp"/>
 
 	<android.support.v7.widget.AppCompatButton

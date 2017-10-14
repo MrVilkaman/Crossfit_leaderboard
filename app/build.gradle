@@ -64,6 +64,7 @@ dependencies {
     compile libraries.supportCardview
 
 
+    compile 'com.andkulikov:transitionseverywhere:1.7.6'
     compile 'ru.terrakok.cicerone:cicerone:2.1.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
