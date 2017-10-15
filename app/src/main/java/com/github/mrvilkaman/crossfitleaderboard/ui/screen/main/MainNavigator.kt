@@ -3,6 +3,9 @@ package com.github.mrvilkaman.crossfitleaderboard.ui.screen.main
 import android.content.Intent
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import com.github.mrvilkaman.crossfitleaderboard.ui.screen.ScreensKey
+import com.github.mrvilkaman.crossfitleaderboard.ui.screen.ScreensKey.LEADERBORD_SCREEN
+import com.github.mrvilkaman.crossfitleaderboard.ui.screen.main.leaderboard.LeaderboardScreen
 import com.github.mrvilkaman.presentationlayer.resolution.BaseNavigator
 import com.github.mrvilkaman.presentationlayer.resolution.drawer.LeftDrawerHelper
 import com.github.mrvilkaman.presentationlayer.resolution.toolbar.ToolbarResolver
@@ -23,11 +26,11 @@ class MainNavigator(
 
     override fun getDrawer(): Fragment? = null
 
-    override fun getMainScreenKey(): String? =
-            null
+    override fun getMainScreenKey(): String? = ScreensKey.LEADERBORD_SCREEN
 
     override fun createFragment(screenKey: String, data: Any?): Fragment? =
             when (screenKey) {
+                LEADERBORD_SCREEN -> LeaderboardScreen.open()
                 else -> null
             }
 

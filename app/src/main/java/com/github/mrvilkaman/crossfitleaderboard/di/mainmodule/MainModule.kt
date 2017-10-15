@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import com.github.mrvilkaman.core.R
 import com.github.mrvilkaman.crossfitleaderboard.ui.screen.main.MainActivity
 import com.github.mrvilkaman.crossfitleaderboard.ui.screen.main.MainNavigator
-import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.teaminfo.TeamInfoWizardScreenFragment
+import com.github.mrvilkaman.crossfitleaderboard.ui.screen.main.leaderboard.LeaderboardScreen
 import com.github.mrvilkaman.di.INeedActivityViewNotify
 import com.github.mrvilkaman.di.PerActivity
 import com.github.mrvilkaman.di.PerScreen
@@ -47,5 +47,5 @@ interface MainFragModule {
 
     @PerScreen
     @ContributesAndroidInjector()
-    fun getTeamInfoWizardScreenFragment(): TeamInfoWizardScreenFragment
+    fun getLeaderboardScreen(): LeaderboardScreen
 }

@@ -8,4 +8,5 @@ public class ScreensKey {
 	public static final String TEAM_INFO_REGISTRATION_WIZARD= "TEAM_INFO_REGISTRATION_WIZARD";
 
 	public static final String EVENT_SCREEN= "EVENT_SCREEN";
+	public static final String LEADERBORD_SCREEN= "LEADERBORD_SCREEN";
 }
