@@ -3,4 +3,6 @@ package com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.teaminf
 
 import com.github.mrvilkaman.presentationlayer.fragments.core.BaseView
 
-interface TeamInfoWizardView : BaseView
+interface TeamInfoWizardView : BaseView {
+    fun showTeamErrors(errorMessageTextId: Int, number: Int)
+}

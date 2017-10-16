@@ -18,11 +18,11 @@ class TeamInfoWizardScreenFragment : BaseFragment<TeamInfoWizardPresenter>(), Te
         }
     }
 
-    companion object {
-        fun open(): TeamInfoWizardScreenFragment {
-            return TeamInfoWizardScreenFragment()
-        }
+    override fun showTeamErrors(errorMessageTextId: Int, number: Int) {
+
     }
 
-
+    companion object {
+        fun open(): TeamInfoWizardScreenFragment = TeamInfoWizardScreenFragment()
+    }
 }

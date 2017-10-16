@@ -10,6 +10,7 @@ import javax.inject.Inject
 interface RegistrationWizardInteractor {
     fun validateMainEventInfo(uiModel: RegEventMainInfoUIModel): Completable
     fun validateWodInfo(wods: List<WodItem>): Completable
+    fun validateTeamInfo(): Completable
 
     fun createWods(): Single<List<WodItem>>
 }
@@ -19,6 +20,8 @@ class RegistrationWizardInteractorImpl
         private val eventBuilderRepo: EventBuilderRepo
 )
     : RegistrationWizardInteractor {
+    
+    override fun validateTeamInfo(): Completable = Completable.complete()
 
     override fun createWods(): Single<List<WodItem>> = Single.just(eventBuilderRepo.wods)
 
