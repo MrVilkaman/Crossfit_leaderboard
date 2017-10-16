@@ -4,6 +4,7 @@ package com.github.mrvilkaman.crossfitleaderboard.ui.dialogs
 import android.app.Dialog
 import android.content.Context
 import android.support.annotation.LayoutRes
+import android.support.annotation.StringRes
 import android.view.LayoutInflater
 import android.view.View
 import com.afollestad.materialdialogs.DialogAction
@@ -25,16 +26,16 @@ abstract class CommonDialog<P : BasePresenter<*>>(val context: Context) : BaseVi
     var throwableResolver: ThrowableResolver? = null
     private var dialog: MaterialDialog? = null
 
+    @StringRes
+    protected  abstract fun title(): Int
 
-    protected abstract val title: Int
-
-    @get:LayoutRes
-    protected abstract val layout: Int
+    @LayoutRes
+    protected abstract fun layout(): Int
 
 
     protected fun build(): Dialog {
         val builder = MaterialDialog.Builder(context)
-        val layout = layout
+        val layout = layout()
         if (layout != 0) {
             val view = LayoutInflater.from(context)
                     .inflate(layout, null)
@@ -48,7 +49,7 @@ abstract class CommonDialog<P : BasePresenter<*>>(val context: Context) : BaseVi
         }
 
 
-        val title = title
+        val title = title()
         if (title != 0) {
             builder.title(title)
         }
@@ -76,7 +77,7 @@ abstract class CommonDialog<P : BasePresenter<*>>(val context: Context) : BaseVi
 
     }
 
-    protected fun doWorkWithDialog(dialog: MaterialDialog?) {
+    protected open fun doWorkWithDialog(dialog: MaterialDialog?) {
 
     }
 

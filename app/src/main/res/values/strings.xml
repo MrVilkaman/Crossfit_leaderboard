@@ -30,5 +30,9 @@
 	<string name="wod_wizard_type_afar">AFAP</string>
 	<string name="wod_wizard_type_amrap">AMRAP</string>
 
+	<string name="main_row_result_add">Добавить</string>
+	<string name="main_row_result_change">Изменить</string>
+	<string name="order_work_action_cancel">Отменить</string>
+	<string name="order_work_action_save">Сохранить</string>
 
 </resources>

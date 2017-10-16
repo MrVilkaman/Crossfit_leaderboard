@@ -17,11 +17,10 @@ class DatePickerDialog private constructor(context: Context, date: Date?, privat
     private var dateCallback: OnSelectedDateListener? = null
     private var date: Date? = null
 
-    override val title: Int
-        get() = 0
 
-    override val layout: Int
-        get() = R.layout.dialog_date
+    override fun layout(): Int = R.layout.dialog_date
+
+    override fun title(): Int = 0
 
     init {
         var date = date
@@ -117,7 +116,7 @@ class DatePickerDialog private constructor(context: Context, date: Date?, privat
         }
 
         fun create(context: Context, date: Date, type: TYPE,
-                   dateCallback: OnSelectedDateListener): Dialog{
+                   dateCallback: OnSelectedDateListener): Dialog {
             return create(context, date, type, null, dateCallback)
         }
 

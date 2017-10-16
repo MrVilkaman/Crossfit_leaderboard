@@ -23,9 +23,7 @@ class WodInfoModelVH(view: View) : BaseVH<WodInfoModel>(view) {
         super.setListeners(view, onClick, onLongClick)
 
         view.wod_add_btn.setOnClickListener {
-            item.score = 999
-            //todo заменить!
-            bind(item, layoutPosition, null)
+            onLongClick?.click(item)
         }
     }
 
@@ -38,8 +36,10 @@ class WodInfoModelVH(view: View) : BaseVH<WodInfoModel>(view) {
             UIUtils.changeVisibility(itemView.wod_score, true)
             UIUtils.changeVisibility(itemView.wod_add_btn, false)
             itemView.wod_score.wod_score.text = score.toString()
+            itemView.wod_add_btn.setText(R.string.main_row_result_change)
         } else {
             UIUtils.changeVisibility(itemView.wod_score, false)
+            itemView.wod_add_btn.setText(R.string.main_row_result_add)
             UIUtils.changeVisibility(itemView.wod_add_btn, true)
         }
     }
