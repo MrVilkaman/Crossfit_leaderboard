@@ -29,11 +29,11 @@ class WodInfoWizardScreen : BaseFragment<WodInfoWizardPresenter>(), WodInfoWizar
         }
     }
 
-    override fun createWodViews(wodCount: Int) {
+    override fun createWodViews(wod: List<WodItem>) {
         TransitionManager.beginDelayedTransition(parent)
         wod_content.removeAllViews()
-        for (i in 0 until wodCount) {
-            wod_content.addView(WodInfoItemWidget(context, i + 1))
+        for (i in 0 until wod.size) {
+            wod_content.addView(WodInfoItemWidget(context, i + 1, wod[i]))
         }
     }
 

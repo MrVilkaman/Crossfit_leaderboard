@@ -1,6 +1,7 @@
 package com.github.mrvilkaman.crossfitleaderboard.business.registration
 
 import com.github.mrvilkaman.crossfitleaderboard.R
+import com.github.mrvilkaman.crossfitleaderboard.repository.EventBuilderRepo
 import io.reactivex.Completable
 import io.reactivex.Single
 import javax.inject.Inject
@@ -8,20 +9,21 @@ import javax.inject.Inject
 
 interface RegistrationWizardInteractor {
     fun validateMainEventInfo(uiModel: RegEventMainInfoUIModel): Completable
-    fun validateWodInfo(wods: ArrayList<WodItem>): Completable
-    fun initWodCount(): Single<Int>
+    fun validateWodInfo(wods: List<WodItem>): Completable
+
+    fun createWods(): Single<List<WodItem>>
 }
 
 class RegistrationWizardInteractorImpl
-@Inject constructor()
+@Inject constructor(
+        private val eventBuilderRepo: EventBuilderRepo
+)
     : RegistrationWizardInteractor {
 
-    override fun initWodCount(): Single<Int> = Single.just(uiModel?.wodCount ?: 1)
-
-    private var uiModel: RegEventMainInfoUIModel? = null
-    private var wodList: ArrayList<WodItem>? = null
+    override fun createWods(): Single<List<WodItem>> = Single.just(eventBuilderRepo.wods)
 
     override fun validateMainEventInfo(uiModel: RegEventMainInfoUIModel): Completable {
+        eventBuilderRepo.regEventMainInfoUIModel = uiModel
         if (uiModel.title.isNullOrEmpty()) {
             return Completable.error(ValidateException(R.string.registration_wizard_error_title_empty))
         }
@@ -31,11 +33,13 @@ class RegistrationWizardInteractorImpl
         if (uiModel.wodCount == null) {
             return Completable.error(ValidateException(R.string.registration_wizard_error))
         }
-        this.uiModel = uiModel
+        eventBuilderRepo.mainInfoFinish()
         return Completable.complete()
     }
 
-    override fun validateWodInfo(wods: ArrayList<WodItem>): Completable {
+    override fun validateWodInfo(wods: List<WodItem>): Completable {
+        eventBuilderRepo.wods = wods
+
         val list = ArrayList<ValidateException>()
         wods.forEachIndexed { index, wodItem ->
             if (wodItem.description.isEmpty()) {
@@ -45,7 +49,8 @@ class RegistrationWizardInteractorImpl
         if (list.isNotEmpty()) {
             return Completable.error(ValidateCompositeException(list))
         }
-        wodList = wods
+        eventBuilderRepo.wodsFinish()
+
         return Completable.complete()
     }
 }

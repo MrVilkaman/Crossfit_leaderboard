@@ -17,7 +17,7 @@ constructor(
 ) : BasePresenter<WodInfoWizardView>() {
 
     override fun onViewAttached() {
-        subscribeUI(interactor.initWodCount(), WodCountInitSubs())
+        subscribeUI(interactor.createWods(), WodInitSubs())
     }
 
     fun onClickNextStep(array: ArrayList<WodItem>) {
@@ -26,10 +26,9 @@ constructor(
 }
 
 
-private class WodCountInitSubs() : ViewSubscriber<WodInfoWizardView, Int>() {
-    override fun onNext(wodCount: Int) {
-        super.onNext(wodCount)
-        view().createWodViews(wodCount)
+private class WodInitSubs : ViewSubscriber<WodInfoWizardView, List<WodItem>>() {
+    override fun onNext(wods: List<WodItem>) {
+        view().createWodViews(wods)
     }
 }
 

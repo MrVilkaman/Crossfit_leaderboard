@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity
 import com.github.mrvilkaman.core.R
 import com.github.mrvilkaman.crossfitleaderboard.business.registration.RegistrationWizardInteractor
 import com.github.mrvilkaman.crossfitleaderboard.business.registration.RegistrationWizardInteractorImpl
+import com.github.mrvilkaman.crossfitleaderboard.data.registration.EventBuilderRepoImpl
+import com.github.mrvilkaman.crossfitleaderboard.repository.EventBuilderRepo
 import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.RegistrationActivity
 import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.RegistrationNavigator
 import com.github.mrvilkaman.crossfitleaderboard.ui.screen.registration.mainInfo.MainInfoWizardScreen
@@ -51,10 +53,14 @@ interface RegistrationFragModule {
     @PerActivity
     fun provideFeatureView(featureActivity: RegistrationActivity): AppCompatActivity
 
+    @Binds
+    @PerActivity
+    fun provideEventBuilderRepo(featureActivity: EventBuilderRepoImpl): EventBuilderRepo
+
 
     @PerActivity
     @Binds
-    fun getRegistrationWizardInteractor(inter:RegistrationWizardInteractorImpl): RegistrationWizardInteractor
+    fun getRegistrationWizardInteractor(inter: RegistrationWizardInteractorImpl): RegistrationWizardInteractor
 
     @PerScreen
     @ContributesAndroidInjector()

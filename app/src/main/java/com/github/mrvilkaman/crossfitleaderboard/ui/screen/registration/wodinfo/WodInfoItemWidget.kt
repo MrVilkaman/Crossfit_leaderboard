@@ -22,8 +22,11 @@ import kotlinx.android.synthetic.main.item_wod_info_view.view.*
 
 class WodInfoItemWidget : BaseCustomView<BasePresenter<*>> {
 
-    constructor(context: Context, number: Int) : super(context, null) {
+    constructor(context: Context, number: Int, current:WodItem) : super(context, null) {
         registration_wizard_wod_number.text = resources.getString(R.string.wod_wizard_title, number)
+
+        registration_wizard_wod_description.setText(current.description)
+        registration_wizard_wod_type.setSelection(current.type.ordinal)
     }
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
@@ -69,6 +72,7 @@ class WodInfoItemWidget : BaseCustomView<BasePresenter<*>> {
     override fun getLayoutId(): Int = R.layout.item_wod_info_view
 
     fun getData(): WodItem = WodItem(UIUtils.asString(registration_wizard_wod_description), wodType)
+
     fun setError(@StringRes errorMessageTextId: Int) {
         registration_wizard_wod_description_input.error = resources.getString(errorMessageTextId)
     }
