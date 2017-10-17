@@ -14,16 +14,20 @@ data class CrossfitEvent(
 data class CrossfitWod(
         val number: Int,
         val description: String,
-        val members: List<CrossfitTeam>,
+        val results: List<CrossfitResult>,
         val type: WodType,
         var state: WodState = WodState.INACTIVE
-        )
+)
 
 data class CrossfitTeam(
-        val name:String,
-        val parent: CrossfitEvent, // ?
-        var score:Int = 0,
-        var wodPosition:Int? = null
+        val name: String
+)
+
+data class CrossfitResult(
+        val team: CrossfitTeam,
+//        val parent: CrossfitWod, // ?
+        var score: Int = 0,
+        var wodPosition: Int? = null
 )
 
 enum class WodType(@StringRes val titleStrId: Int) {
@@ -33,5 +37,5 @@ enum class WodType(@StringRes val titleStrId: Int) {
 
 
 enum class WodState {
-    INACTIVE,ACTIVE, DONE, FINISH
+    INACTIVE, ACTIVE, DONE, FINISH
 }

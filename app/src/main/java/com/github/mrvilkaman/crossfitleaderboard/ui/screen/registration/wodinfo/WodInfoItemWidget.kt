@@ -13,8 +13,8 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.github.mrvilkaman.crossfitleaderboard.R
+import com.github.mrvilkaman.crossfitleaderboard.business.WodType
 import com.github.mrvilkaman.crossfitleaderboard.business.registration.WodItem
-import com.github.mrvilkaman.crossfitleaderboard.business.registration.WodType
 import com.github.mrvilkaman.presentationlayer.fragments.core.BaseCustomView
 import com.github.mrvilkaman.presentationlayer.fragments.core.BasePresenter
 import com.github.mrvilkaman.presentationlayer.utils.ui.UIUtils

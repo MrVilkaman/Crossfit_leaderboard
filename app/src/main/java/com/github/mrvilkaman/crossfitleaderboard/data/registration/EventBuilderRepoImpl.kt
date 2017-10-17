@@ -1,8 +1,8 @@
 package com.github.mrvilkaman.crossfitleaderboard.data.registration
 
+import com.github.mrvilkaman.crossfitleaderboard.business.WodType
 import com.github.mrvilkaman.crossfitleaderboard.business.registration.RegEventMainInfoUIModel
 import com.github.mrvilkaman.crossfitleaderboard.business.registration.WodItem
-import com.github.mrvilkaman.crossfitleaderboard.business.registration.WodType
 import com.github.mrvilkaman.crossfitleaderboard.repository.EventBuilderRepo
 import javax.inject.Inject
 
@@ -26,6 +26,7 @@ constructor() : EventBuilderRepo {
                     else -> list
                 }
             }
+            field = value
         }
     override var wods: List<WodItem> = ArrayList()
 

@@ -31,6 +31,7 @@ import javax.inject.Singleton
         DevModule::class,
         EventBusModule::class,
         CoreProvidersModule::class,
+        AppRepoModules::class,
         NavigationModule::class))
 @Singleton
 interface AppComponent {
