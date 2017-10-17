@@ -17,7 +17,7 @@ constructor(
 ) : BasePresenter<TeamInfoWizardView>() {
 
     fun onClickFinish() {
-        subscribeUI(interactor.validateTeamInfo(), ValidateSubs(router))
+        subscribeUI(interactor.validateTeamInfoAndCreateEvent(), ValidateSubs(router))
     }
 }
 
