@@ -26,7 +26,7 @@ data class CrossfitTeam(
 data class CrossfitResult(
         val team: CrossfitTeam,
 //        val parent: CrossfitWod, // ?
-        var score: Int = 0,
+        var score: Int? = null,
         var wodPosition: Int? = null
 )
 

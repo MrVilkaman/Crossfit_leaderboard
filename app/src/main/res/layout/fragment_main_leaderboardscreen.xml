@@ -11,16 +11,10 @@
 		android:orientation="vertical">
 
 		<com.github.mrvilkaman.crossfitleaderboard.ui.screen.main.leaderboard.widgets.LeaderBoardItemWidget
+			android:id="@+id/wod_1"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"/>
 
-		<com.github.mrvilkaman.crossfitleaderboard.ui.screen.main.leaderboard.widgets.LeaderBoardItemWidget
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"/>
-
-		<com.github.mrvilkaman.crossfitleaderboard.ui.screen.main.leaderboard.widgets.LeaderBoardItemWidget
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"/>
 	</LinearLayout>
 
 </ScrollView>

@@ -29,7 +29,7 @@ constructor() : EventsRepo {
                     CrossfitResult(CrossfitTeam("Username 3"))
             )
             val wodsCrossfit = arrayListOf(
-                    CrossfitWod(1, "Бурпи и еще раз бурпи", results, WodType.AMRAP),
+                    CrossfitWod(1, "Бурпи и еще раз бурпи", results, WodType.AMRAP, WodState.ACTIVE),
                     CrossfitWod(2, "21-15-9\nТрастеры\nБурпи", results2, WodType.AFAP)
             )
 
