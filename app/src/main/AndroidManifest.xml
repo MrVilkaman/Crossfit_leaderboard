@@ -12,17 +12,17 @@
 		android:theme="@style/AppTheme.Main">
 
 		<activity android:name=".ui.screen.registration.RegistrationActivity">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN"/>
-				<category android:name="android.intent.category.LAUNCHER"/>
-			</intent-filter>
-		</activity>
-
-		<activity android:name=".ui.screen.main.MainActivity">
 			<!--<intent-filter>-->
 				<!--<action android:name="android.intent.action.MAIN"/>-->
 				<!--<category android:name="android.intent.category.LAUNCHER"/>-->
 			<!--</intent-filter>-->
+		</activity>
+
+		<activity android:name=".ui.screen.main.MainActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
 		</activity>
 	</application>
 
